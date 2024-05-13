@@ -24,7 +24,7 @@ const Header = () => {
       </div>
       <div className="flex gap-4">
         <a
-          href="https://github.com/adedolapoadegboye/GNSSMetrics"
+          href="https://github.com/adedolapoadegboye/gnss-metrics"
           target="_blank"
           rel="noreferrer"
         >
