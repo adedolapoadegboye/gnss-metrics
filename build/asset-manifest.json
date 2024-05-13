@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d8cbc6a4.css",
+    "main.js": "/static/js/main.e660964a.js",
+    "static/js/453.4ebfd11d.chunk.js": "/static/js/453.4ebfd11d.chunk.js",
+    "static/media/Step 1 - Coordinates only.png": "/static/media/Step 1 - Coordinates only.046733c0988b82df7fb5.png",
+    "static/media/Step 1 - Coordinates and Altitude.png": "/static/media/Step 1 - Coordinates and Altitude.fe1aa07f594ec764c14a.png",
+    "index.html": "/index.html",
+    "main.d8cbc6a4.css.map": "/static/css/main.d8cbc6a4.css.map",
+    "main.e660964a.js.map": "/static/js/main.e660964a.js.map",
+    "453.4ebfd11d.chunk.js.map": "/static/js/453.4ebfd11d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8cbc6a4.css",
+    "static/js/main.e660964a.js"
+  ]
+}
