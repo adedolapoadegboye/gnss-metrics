@@ -11,22 +11,19 @@ import Error404 from "./Dev/Contexts/Error";
 import AuthPage from "./Dev/Auth/AuthPage";
 import Homepage from "./Dev/Homepage";
 import Livepage from "./Dev/Livepage";
-import Firebase from "./Dev/Contexts/firebase";
 
 function App() {
   return (
-    <Firebase>
-      <ErrorBoundary fallback={Error404}>
-        <Routes>
-          <Route path="/">
-            <Route index element={<Homepage />} />
-            <Route path="live" element={<Livepage />} />
-            <Route path="userauth" element={<AuthPage />} />
-            <Route path="*" element={<Error404 />} />
-          </Route>
-        </Routes>
-      </ErrorBoundary>
-    </Firebase>
+    <ErrorBoundary fallback={Error404}>
+      <Routes>
+        <Route path="/">
+          <Route index element={<Homepage />} />
+          <Route path="live" element={<Livepage />} />
+          <Route path="userauth" element={<AuthPage />} />
+          <Route path="*" element={<Error404 />} />
+        </Route>
+      </Routes>
+    </ErrorBoundary>
   );
 }
 
