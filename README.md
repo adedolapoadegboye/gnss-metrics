@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# gnssmetrics.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+gnssmetrics.com is a web application designed to provide comprehensive metrics and analysis for GNSS (Global Navigation Satellite System) testing. It accepts Excel and CSV sheets containing latitude, longitude, and altitude data from a static GNSS test and calculates various metrics using both user-provided ground truth coordinates and the mean of the provided data.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Metrics Calculated:
 
-### `npm start`
+- **Maximum Fix Error**: Calculates the maximum distance to ground truth coordinates.
+- **Minimum Fix Error**: Calculates the minimum distance to ground truth coordinates.
+- **Average Fix Error**: Calculates the average distance to ground truth coordinates.
+- **CEP 50%**: Provides 2D accuracy based on ground truth coordinates with a 50% confidence level.
+- **CEP 90%**: Provides 2D accuracy based on ground truth coordinates with a 90% confidence level.
+- **CEP 98%**: Provides 2D accuracy based on ground truth coordinates with a 98% confidence level.
+- **Mean CEP 50%**: Provides 2D accuracy based on the mean of data coordinates with a 50% confidence level.
+- **Mean CEP 90%**: Provides 2D accuracy based on the mean of data coordinates with a 90% confidence level.
+- **Mean CEP 98%**: Provides 2D accuracy based on the mean of data coordinates with a 98% confidence level.
+- **SEP 50%**: Provides 3D accuracy based on ground truth coordinates with a 50% confidence level.
+- **SEP 90%**: Provides 3D accuracy based on ground truth coordinates with a 90% confidence level.
+- **SEP 98%**: Provides 3D accuracy based on ground truth coordinates with a 98% confidence level.
+- **Mean SEP 50%**: Provides 3D accuracy based on the mean of data coordinates with a 50% confidence level.
+- **Mean SEP 90%**: Provides 3D accuracy based on the mean of data coordinates with a 90% confidence level.
+- **Mean SEP 98%**: Provides 3D accuracy based on the mean of data coordinates with a 98% confidence level.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Visit [gnssmetrics.com](https://gnssmetrics.com) in your web browser.
+2. Upload your Excel or CSV sheet containing latitude, longitude, and altitude data.
+3. Enter your ground truth coordinates (latitude, longitude, and altitude).
+4. Click on the "Calculate Metrics" button.
+5. View the calculated metrics and analysis on the dashboard.
 
-### `npm test`
+## Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Technologies Used:
 
-### `npm run build`
+- React.js for the frontend.
+- Node.js for the backend.
+- Firebase for hosting.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Feature Roadmap
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Implement maps view on result dashboard
+- Add data export of result in different formats (html, csv, xlsx, etc)
+- Implement user sign in and data persistence
+- Implement analysis of live tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup Instructions:
 
-### `npm run eject`
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd gnssmetrics`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your web browser and visit [http://localhost:3000](http://localhost:3000)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions are welcome! If you'd like to contribute to gnssmetrics.com, please follow these guidelines:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`
+3. Make your changes and commit them: `git commit -m 'Add new feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Submit a pull request.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -359,7 +359,7 @@ const FromFile = () => {
                       onClick={handleStartAnalysisButton}
                       className="h-fit w-32 px-6 py-3 w-32 border bg-blue-600 rounded-2xl text-white transition duration-300 ease-in-out hover:bg-blue-500"
                     >
-                      Evaluate
+                      Calculate Metrics
                     </button>
                     <button
                       onClick={handleClearButton}
