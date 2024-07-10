@@ -5,7 +5,7 @@ const DataTable = (file) => {
     if (file.file) {
       // console.log("File:", file.file);
       return (
-        <table className="divide-y divide-gray-200">
+        <table className="divide-y divide-gray-200 mb-4">
           <thead className="bg-gray-200">
             <tr>
               <th
