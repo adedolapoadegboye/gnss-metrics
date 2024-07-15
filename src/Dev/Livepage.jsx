@@ -18,7 +18,7 @@ const LivePage = () => {
       </p>
       <a
         href="/"
-        className="h-fit w-fit px-6 py-3 w-32 border bg-blue-600 rounded-2xl text-white transition duration-300 ease-in-out hover:bg-blue-500"
+        className="h-fit w-fit px-6 py-3 border bg-blue-600 rounded-2xl text-white transition duration-300 ease-in-out hover:bg-blue-500"
       >
         Go Back Home
       </a>
