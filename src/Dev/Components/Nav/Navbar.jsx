@@ -8,21 +8,21 @@ const Navbar = () => {
         to="/"
         className={({ isActive }) =>
           isActive
-            ? "h-fit w-fit px-6 py-3 border bg-blue-600 rounded-2xl text-white transition duration-300 ease-in-out hover:bg-blue-500"
-            : "font-normal"
+            ? "h-fit w-fit px-6 py-3 border bg-gray-700 rounded-2xl text-white transition duration-300 ease-in-out hover:bg-gray-600"
+            : "font-normal text-gray-700 hover:text-gray-900 transition duration-300 ease-in-out"
         }
       >
-        Load Data from File
+        Load Data...
       </NavLink>
       <NavLink
         to="/live"
         className={({ isActive }) =>
           isActive
-            ? "h-fit w-fit px-6 py-3 border bg-blue-600 rounded-2xl text-white transition duration-300 ease-in-out hover:bg-blue-500"
-            : "font-normal"
+            ? "h-fit w-fit px-6 py-3 border bg-gray-700 rounded-2xl text-white transition duration-300 ease-in-out hover:bg-gray-600"
+            : "font-normal text-gray-700 hover:text-gray-900 transition duration-300 ease-in-out"
         }
       >
-        Analyze Live Data
+        Live Data...
       </NavLink>
     </nav>
   );

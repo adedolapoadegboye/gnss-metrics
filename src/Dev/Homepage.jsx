@@ -16,14 +16,14 @@ const Homepage = () => {
         </div>
       }
     >
-      <div className="max-w-screen h-full flex flex-col bg-gray-100 overflow-y-auto relative">
-        <div className="h-1/8 w-full border-b-2 border-gray-200 fixed top-0 z-10 bg-white bg-opacity-100 pt-2 md:pt-4 pb-2 md:pb-4">
+      <div className="w-full h-full flex flex-col bg-gray-100 overflow-y-auto relative">
+        <div className="h-[8vh] sm:h-[8vh] md:h-[10vh] w-full border-b-2 border-gray-200 fixed top-0 z-10 bg-white bg-opacity-100">
           <Header />
         </div>
-        <div className="h-full w-full px-[5vw] sm:px-[10vw] py-[2vw] pt-[12vh] sm:pt-[15vh]">
+        <div className="flex-grow w-full px-[5vw] sm:px-[10vw] py-[calc(12vh)] sm:py-[calc(12vh)] md:py-[calc(14vh)]">
           <FromFile />
         </div>
-        <div className="h-1/8 w-full border-t-2 pt-4 md:pt-8 pb-4 md:pb-8 bg-white">
+        <div className="h-[10vh] sm:h-[8vh] md:h-[7vh] lg:h-[6vh] xl:h-[5vh] w-full border-gray-200 bg-white bg-opacity-100">
           <Footer />
         </div>
       </div>
