@@ -1,6 +1,6 @@
 {
   "name": "gnssmetrics",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -9,9 +9,11 @@
     "@types/google.maps": "^3.55.7",
     "axios": "^1.6.8",
     "chart.js": "^4.4.2",
+    "file-saver": "^2.0.5",
     "firebase": "^10.11.1",
     "framer-motion": "^11.1.9",
     "google-map-react": "^2.2.1",
+    "jszip": "^3.10.1",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^3.3.0",
     "papaparse": "^5.4.1",

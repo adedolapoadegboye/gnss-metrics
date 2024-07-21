@@ -7,6 +7,7 @@ import StatsAndPlotsRender from "../Functions/StatsAndPlotsRender";
 import DataTable from "../Components/Visualizers/DataTable";
 import step_1_with_altitude from "../../Screenshots/Step 1 - Coordinates and Altitude.png";
 import step_1_without_altitude from "../../Screenshots/Step 1 - Coordinates only.png";
+import downloadExampleFiles from "../Functions/HandleZip";
 
 const FromFile = () => {
   const [file, setFile] = useState(null);
@@ -131,6 +132,19 @@ const FromFile = () => {
                     Image 1b: Template for datasets without "Altitude" values
                   </p>
                 </div>
+              </div>
+              <div className="text-start">
+                <p className="text-sm sm:text-md md:text-lg lg:text-xl text-gray-600 w-full text-center">
+                  Click{" "}
+                  <button
+                    onClick={downloadExampleFiles}
+                    className="text-blue-600 underline"
+                  >
+                    {" "}
+                    here
+                  </button>{" "}
+                  to download the example files above.
+                </p>
               </div>
             </div>
             <div className="flex flex-col gap-4 md:gap-6 items-center w-full h-full justify-center">
