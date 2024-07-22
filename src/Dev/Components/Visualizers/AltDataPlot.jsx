@@ -4,7 +4,7 @@ import Chart from "chart.js/auto";
 const LineChart = (data) => {
   const chartRef = useRef(null);
 
-  console.log("2D errors: ", data);
+  console.log("3D errors: ", data);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
@@ -18,11 +18,11 @@ const LineChart = (data) => {
     chartRef.current.chart = new Chart(ctx, {
       type: "line",
       data: {
-        labels: data.plotData.map((_, i) => i),
+        labels: data.altPlotData.map((_, i) => i),
         datasets: [
           {
-            label: "2D Fix Error (m)",
-            data: data.plotData.map((value, index) => ({
+            label: "3D Fix Error (m)",
+            data: data.altPlotData.map((value, index) => ({
               x: index,
               y: value,
             })),
@@ -60,7 +60,7 @@ const LineChart = (data) => {
         plugins: {
           title: {
             display: true,
-            text: "Plot of 2D Fix Error with respect to Reference 3D Coordinates",
+            text: "Plot of 3D Fix Error with respect to Reference 3D Coordinates",
           },
         },
       },

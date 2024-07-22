@@ -18,6 +18,7 @@ const FromFile = () => {
   const [refAlt, setRefAlt] = useState("");
   const [startButton, setStartButton] = useState(false);
   const [plotData, setPlotData] = useState([]);
+  const [altPlotData, setAltPlotData] = useState([]);
   const [inactiveStartButton, setInactiveStartButton] = useState("");
 
   const fileCheckRender = () => {
@@ -60,6 +61,7 @@ const FromFile = () => {
       setRefAlt("");
       setStartButton(false);
       setPlotData([]);
+      setAltPlotData([]);
       setInactiveStartButton("");
     } catch (error) {
       console.error("Error occurred while handling clear button click:", error);
@@ -75,6 +77,7 @@ const FromFile = () => {
     fileName,
     fileType,
     plotData,
+    altPlotData,
   ]);
 
   const fileInputRef = useRef(null);
@@ -143,7 +146,7 @@ const FromFile = () => {
                     {" "}
                     here
                   </button>{" "}
-                  to download the example files above.
+                  to download example files for reference.
                 </p>
               </div>
             </div>
@@ -217,17 +220,21 @@ const FromFile = () => {
               </div>
             </div>
           </div>
+          <div>
+            <StatsAndPlotsRender
+              startButton={startButton}
+              file={file}
+              refLat={refLat}
+              refLong={refLong}
+              refAlt={refAlt}
+              setPlotData={setPlotData}
+              plotData={plotData}
+              setAltPlotData={setAltPlotData}
+              altPlotData={altPlotData}
+            />
+          </div>
         </div>
       </div>
-      <StatsAndPlotsRender
-        startButton={startButton}
-        file={file}
-        refLat={refLat}
-        refLong={refLong}
-        refAlt={refAlt}
-        setPlotData={setPlotData}
-        plotData={plotData}
-      />
     </div>
   );
 };

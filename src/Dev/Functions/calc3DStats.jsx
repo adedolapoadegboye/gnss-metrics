@@ -15,18 +15,28 @@ const calc3DStats = (
   setMeanSep98,
   meanLat,
   meanLong,
-  meanAlt
+  meanAlt,
+  setAltPlotData
 ) => {
-  if (markers.length > 1 && markers[0].alt > 1 && refAlt && refLat && refLong) {
+  if (
+    markers.length > 1 &&
+    markers[0].lat &&
+    markers[0].lng &&
+    markers[0].alt > 1 &&
+    refAlt &&
+    refLat &&
+    refLong
+  ) {
     try {
       const fixErrors = markers.map((data) => {
         const { lat, lng, alt } = data;
         const fixError = parseFloat(
-          calc3DDistance(refLat, refLong, refAlt, lat, lng, alt).toFixed(2)
+          calc3DDistance(refLat, refLong, refAlt, lat, lng, alt)
         );
         return fixError;
       });
 
+      setAltPlotData([...fixErrors]);
       setTriDDistances([...fixErrors]);
 
       const sortedFixErrors = fixErrors.sort((a, b) => a - b);
@@ -43,10 +53,10 @@ const calc3DStats = (
         const meanTriDFixError = parseFloat(
           calc3DDistance(meanLat, meanLong, meanAlt, lat, lng, alt)
         );
-        // console.log(meanTriDFixError);
         return meanTriDFixError;
       });
-      setTriDMeanDistances(...meanTriDFixErrors);
+
+      setTriDMeanDistances([...meanTriDFixErrors]);
 
       const sortedTriDMeanDistances = meanTriDFixErrors.sort((a, b) => a - b);
       const meanSep50Index = Math.floor(sortedTriDMeanDistances.length * 0.5);

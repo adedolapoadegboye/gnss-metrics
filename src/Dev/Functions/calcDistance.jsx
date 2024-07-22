@@ -1,26 +1,26 @@
+import LatLonEllipsoidal_Vincenty from "geodesy/latlon-ellipsoidal-vincenty";
+
+/**
+ * Calculates the distance between two geographical points using spherical coordinates.
+ * @param {number} lat1 - Latitude of the first point.
+ * @param {number} lon1 - Longitude of the first point.
+ * @param {number} lat2 - Latitude of the second point.
+ * @param {number} lon2 - Longitude of the second point.
+ * @returns {string} - The distance between the two points in meters, formatted to two decimal places.
+ */
 const calcDistance = (lat1, lon1, lat2, lon2) => {
   try {
-    const earthRadius = 6371 * 1000; // Earth's radius in meters
+    // Create LatLonSpherical objects for the reference and test points
+    const refPoint = new LatLonEllipsoidal_Vincenty(lat1, lon1);
+    const testPoint = new LatLonEllipsoidal_Vincenty(lat2, lon2);
 
-    const toRadians = (degrees) => {
-      return degrees * (Math.PI / 180);
-    };
+    // Calculate the distance between the points
+    const distance = refPoint.distanceTo(testPoint);
 
-    const latDiffRad = toRadians(lat2 - lat1);
-    const lonDiffRad = toRadians(lon2 - lon1);
-
-    const a =
-      Math.sin(latDiffRad / 2) ** 2 +
-      Math.cos(toRadians(lat1)) *
-        Math.cos(toRadians(lat2)) *
-        Math.sin(lonDiffRad / 2) ** 2;
-
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-    const distance = earthRadius * c;
-
+    // Return the distance formatted to two decimal places
     return distance.toFixed(2);
   } catch (error) {
+    // Log any errors that occur during the distance calculation
     console.error("Error occurred while calculating distance:", error);
     return "";
   }
