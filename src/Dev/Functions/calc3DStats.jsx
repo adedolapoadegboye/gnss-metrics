@@ -15,7 +15,8 @@ const calc3DStats = (
   setMeanSep98,
   meanLat,
   meanLong,
-  meanAlt
+  meanAlt,
+  setAltPlotData
 ) => {
   if (markers.length > 1 && markers[0].alt > 1 && refAlt && refLat && refLong) {
     try {
@@ -27,6 +28,7 @@ const calc3DStats = (
         return fixError;
       });
 
+      setAltPlotData([...fixErrors]);
       setTriDDistances([...fixErrors]);
 
       const sortedFixErrors = fixErrors.sort((a, b) => a - b);

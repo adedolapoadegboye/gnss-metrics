@@ -5,7 +5,15 @@ import calcStats from "../../Functions/calcStats";
 import calc3DStats from "../../Functions/calc3DStats";
 
 const DataStats = (props) => {
-  const { file, refLat, refLong, refAlt, startButton, setPlotData } = props;
+  const {
+    file,
+    refLat,
+    refLong,
+    refAlt,
+    startButton,
+    setPlotData,
+    setAltPlotData,
+  } = props;
 
   const [markers, setMarkers] = useState([]);
   const [distances, setDistances] = useState([]);
@@ -67,7 +75,8 @@ const DataStats = (props) => {
         setMeanSep98,
         meanLat,
         meanLong,
-        meanAlt
+        meanAlt,
+        setAltPlotData
       );
     } catch (error) {
       console.error("Error occurred while calculating stats:", error);
