@@ -1,19 +1,40 @@
+import LatLonEllipsoidal from "geodesy/latlon-ellipsoidal";
+
+/**
+ * Calculates the 3D Cartesian distance between two geographical points using ellipsoidal coordinates.
+ * @param {number} lat1 - Latitude of the first point.
+ * @param {number} lon1 - Longitude of the first point.
+ * @param {number} alt1 - Altitude of the first point.
+ * @param {number} lat2 - Latitude of the second point.
+ * @param {number} lon2 - Longitude of the second point.
+ * @param {number} alt2 - Altitude of the second point.
+ * @returns {string} - The Cartesian distance between the two points in meters, formatted to two decimal places.
+ */
 const calc3DDistance = (lat1, lon1, alt1, lat2, lon2, alt2) => {
-  const earthRadius = 6371e3; // Earth's radius in meters
-  const latDiff = (lat2 - lat1) * (Math.PI / 180);
-  const lonDiff = (lon2 - lon1) * (Math.PI / 180);
-  const altDiff = alt2 - alt1;
-  const a =
-    Math.sin(latDiff / 2) * Math.sin(latDiff / 2) +
-    Math.cos(lat1 * (Math.PI / 180)) *
-      Math.cos(lat2 * (Math.PI / 180)) *
-      Math.sin(lonDiff / 2) *
-      Math.sin(lonDiff / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  const distance = Math.sqrt(
-    Math.pow(earthRadius * c, 2) + Math.pow(altDiff, 2)
-  ); // 3D distance
-  return distance;
+  try {
+    // Convert geographical points to Cartesian coordinates
+    const refPoint = new LatLonEllipsoidal(lat1, lon1, alt1).toCartesian();
+    const testPoint = new LatLonEllipsoidal(lat2, lon2, alt2).toCartesian();
+
+    // Log the Cartesian points for debugging
+    // console.log(refPoint, testPoint);
+
+    // Calculate the Cartesian distance between the two points
+    const distance = Math.sqrt(
+      (refPoint.x - testPoint.x) ** 2 +
+        (refPoint.y - testPoint.y) ** 2 +
+        (refPoint.z - testPoint.z) ** 2
+    );
+
+    // console.log(distance);
+
+    // Return the distance formatted to two decimal places
+    return distance.toFixed(2);
+  } catch (error) {
+    // Log any errors that occur during the distance calculation
+    console.error("Error occurred while calculating 3D distance:", error);
+    return "";
+  }
 };
 
 export default calc3DDistance;

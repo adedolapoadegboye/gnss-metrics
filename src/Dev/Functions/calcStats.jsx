@@ -16,7 +16,13 @@ const calcStats = (
   meanLat,
   meanLong
 ) => {
-  if (markers.length > 0 && refLat && refLong) {
+  if (
+    markers.length > 0 &&
+    markers[0].lat &&
+    markers[0].lng &&
+    refLat &&
+    refLong
+  ) {
     try {
       const fixErrors = markers.map((data) => {
         const { lat, lng } = data;
