@@ -12,24 +12,35 @@ import LatLonEllipsoidal from "geodesy/latlon-ellipsoidal";
  */
 const calc3DDistance = (lat1, lon1, alt1, lat2, lon2, alt2) => {
   try {
-    // Convert geographical points to Cartesian coordinates
-    const refPoint = new LatLonEllipsoidal(lat1, lon1, alt1).toCartesian();
-    const testPoint = new LatLonEllipsoidal(lat2, lon2, alt2).toCartesian();
+    if (
+      lat1 !== undefined &&
+      lat2 !== undefined &&
+      lon1 !== undefined &&
+      lon2 !== undefined &&
+      alt1 !== undefined &&
+      alt2 !== undefined
+    ) {
+      // Convert geographical points to Cartesian coordinates
+      const refPoint = new LatLonEllipsoidal(lat1, lon1, alt1).toCartesian();
+      const testPoint = new LatLonEllipsoidal(lat2, lon2, alt2).toCartesian();
 
-    // Log the Cartesian points for debugging
-    // console.log(refPoint, testPoint);
+      // Log the Cartesian points for debugging
+      // console.log(refPoint, testPoint);
 
-    // Calculate the Cartesian distance between the two points
-    const distance = Math.sqrt(
-      (refPoint.x - testPoint.x) ** 2 +
-        (refPoint.y - testPoint.y) ** 2 +
-        (refPoint.z - testPoint.z) ** 2
-    );
+      // Calculate the Cartesian distance between the two points
+      const distance = Math.sqrt(
+        (refPoint.x - testPoint.x) ** 2 +
+          (refPoint.y - testPoint.y) ** 2 +
+          (refPoint.z - testPoint.z) ** 2
+      );
 
-    // console.log(distance);
+      // console.log(distance);
 
-    // Return the distance formatted to two decimal places
-    return distance.toFixed(2);
+      // Return the distance formatted to two decimal places
+      return distance.toFixed(2);
+    } else {
+      // console.log("undefined parameters");
+    }
   } catch (error) {
     // Log any errors that occur during the distance calculation
     console.error("Error occurred while calculating 3D distance:", error);

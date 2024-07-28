@@ -2,6 +2,7 @@ import React from "react";
 import DataStats from "../Components/Visualizers/DataStats";
 import DataPlot from "../Components/Visualizers/DataPlot";
 import AltDataPlot from "../Components/Visualizers/AltDataPlot";
+import DataMap from "../Components/Visualizers/DataMap";
 
 const StatsAndPlotsRender = ({
   startButton,
@@ -37,6 +38,9 @@ const StatsAndPlotsRender = ({
               <DataPlot plotData={plotData} />
               <AltDataPlot altPlotData={altPlotData} />
             </div>
+          </div>
+          <div className="w-full h-[calc(75vh)] md:h-[calc(50vh)]">
+            <DataMap file={file} refLat={refLat} refLong={refLong} />
           </div>
         </div>
       );

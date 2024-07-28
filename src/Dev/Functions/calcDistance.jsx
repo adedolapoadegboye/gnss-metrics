@@ -10,19 +10,27 @@ import LatLonEllipsoidal_Vincenty from "geodesy/latlon-ellipsoidal-vincenty";
  */
 const calcDistance = (lat1, lon1, lat2, lon2) => {
   try {
-    // Create LatLonSpherical objects for the reference and test points
-    const refPoint = new LatLonEllipsoidal_Vincenty(lat1, lon1);
-    const testPoint = new LatLonEllipsoidal_Vincenty(lat2, lon2);
+    if (
+      lat1 !== undefined &&
+      lat2 !== undefined &&
+      lon1 !== undefined &&
+      lon2 !== undefined
+    ) {
+      // Create LatLonSpherical objects for the reference and test points
+      const refPoint = new LatLonEllipsoidal_Vincenty(lat1, lon1);
+      const testPoint = new LatLonEllipsoidal_Vincenty(lat2, lon2);
 
-    // Calculate the distance between the points
-    const distance = refPoint.distanceTo(testPoint);
+      // Calculate the distance between the points
+      const distance = refPoint.distanceTo(testPoint);
 
-    // Return the distance formatted to two decimal places
-    return distance.toFixed(2);
+      // Return the distance formatted to two decimal places
+      return distance.toFixed(2);
+    } else {
+      // console.log("undefined parameters");
+    }
   } catch (error) {
     // Log any errors that occur during the distance calculation
     console.error("Error occurred while calculating distance:", error);
-    return "";
   }
 };
 

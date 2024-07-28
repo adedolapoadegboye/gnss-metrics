@@ -4,8 +4,6 @@ import Chart from "chart.js/auto";
 const LineChart = (data) => {
   const chartRef = useRef(null);
 
-  console.log("2D errors: ", data);
-
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
 
@@ -60,7 +58,7 @@ const LineChart = (data) => {
         plugins: {
           title: {
             display: true,
-            text: "Plot of 2D Fix Error with respect to Reference 3D Coordinates",
+            text: "Plot of 2D Fix Error with respect to Reference 2D Coordinates",
           },
         },
       },
