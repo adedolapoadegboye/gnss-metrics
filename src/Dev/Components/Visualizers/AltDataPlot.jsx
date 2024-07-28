@@ -4,8 +4,6 @@ import Chart from "chart.js/auto";
 const LineChart = (data) => {
   const chartRef = useRef(null);
 
-  console.log("3D errors: ", data);
-
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
 

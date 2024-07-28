@@ -23,7 +23,7 @@ const calcMeanValues = (markers, setMeanLat, setMeanLong, setMeanAlt) => {
       setMeanLong(sumLong / markers.length);
       setMeanAlt(sumAlt / markers.length);
     } else {
-      throw new Error("Markers array is empty or missing lat/lng properties");
+      // console.log("Markers array is empty or missing lat/lng properties");
     }
   } catch (error) {
     console.error("Error calculating mean values:", error);
