@@ -95,7 +95,6 @@ const StatsAndPlotsRender = ({
               refLat={refLat}
               refLong={refLong}
               refAlt={refAlt}
-              startButton={startButton}
               meanAlt={meanAlt}
               meanLat={meanLat}
               meanLong={meanLong}
@@ -111,6 +110,8 @@ const StatsAndPlotsRender = ({
               meanSep50={meanSep50}
               meanSep90={meanSep90}
               meanSep98={meanSep98}
+              plotData={plotData}
+              altPlotData={altPlotData}
             />
           </div>
         </div>
