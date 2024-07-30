@@ -13,6 +13,36 @@ const DataStats = (props) => {
     startButton,
     setPlotData,
     setAltPlotData,
+    meanAlt,
+    setMeanAlt,
+    meanLat,
+    setMeanLat,
+    meanLong,
+    setMeanLong,
+    cep50,
+    setCep50,
+    cep90,
+    setCep90,
+    cep98,
+    setCep98,
+    meanCep50,
+    setMeanCep50,
+    meanCep90,
+    setMeanCep90,
+    meanCep98,
+    setMeanCep98,
+    sep50,
+    setSep50,
+    sep90,
+    setSep90,
+    sep98,
+    setSep98,
+    meanSep50,
+    setMeanSep50,
+    meanSep90,
+    setMeanSep90,
+    meanSep98,
+    setMeanSep98,
   } = props;
 
   const [markers, setMarkers] = useState([]);
@@ -23,22 +53,6 @@ const DataStats = (props) => {
   const [meanDistances, setMeanDistances] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [triDMeanDistances, setTriDMeanDistances] = useState([]);
-
-  const [meanLat, setMeanLat] = useState();
-  const [meanLong, setMeanLong] = useState();
-  const [meanAlt, setMeanAlt] = useState();
-  const [cep50, setCep50] = useState();
-  const [cep90, setCep90] = useState();
-  const [cep98, setCep98] = useState();
-  const [meanCep50, setMeanCep50] = useState();
-  const [meanCep90, setMeanCep90] = useState();
-  const [meanCep98, setMeanCep98] = useState();
-  const [sep50, setSep50] = useState();
-  const [sep90, setSep90] = useState();
-  const [sep98, setSep98] = useState();
-  const [meanSep50, setMeanSep50] = useState();
-  const [meanSep90, setMeanSep90] = useState();
-  const [meanSep98, setMeanSep98] = useState();
 
   useEffect(() => {
     try {
