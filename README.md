@@ -34,7 +34,7 @@ As a newbie in the world of GNSS technology, I found there were very few open-so
 3. Enter your ground truth coordinates.
 4. Click "Evaluate"
 5. View the metrics and analysis on the dashboard.
-6. Download the results in .xlsx and .kml files
+6. Download the results in .xlsx and .kml files.
 
 ## Tech Stack
 
@@ -65,8 +65,9 @@ As a newbie in the world of GNSS technology, I found there were very few open-so
 1. Clone the repository: `git clone <repository-url>`
 2. Navigate to the project directory: `cd gnssmetrics`
 3. Install dependencies: `npm install`
-4. Start the development server: `npm start`
-5. Visit [http://localhost:3000](http://localhost:3000) in your web browser.
+4. Create a `.env` file in the root folder with your Google Maps API key stored as `REACT_APP_GOOGLE_MAP_KEYS={key}`.
+5. Start the development server: `npm start`
+6. Visit [http://localhost:3000](http://localhost:3000) in your web browser.
 
 ## Contributing
 
